@@ -40,11 +40,11 @@
 </head>
 <body>
   <!-- Background music -->
-  <audio autoplay loop>
+  <audio id="bgMusic1" autoplay loop muted>
     <source src="diwali_music.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
-  <audio autoplay loop>
+  <audio id="bgMusic2" autoplay loop muted>
     <source src="fireworks-29629.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
@@ -65,10 +65,16 @@
   <script>
     const secretBtn = document.getElementById("secretBtn");
     const wishSection = document.getElementById("wishSection");
+    const bgMusic1 = document.getElementById("bgMusic1")
+    const bgMusic2 = document.getElementById("bgMusic2")
 
     secretBtn.addEventListener("click", () => {
       secretBtn.classList.add("hidden");
       wishSection.classList.remove("hidden");
+      bgMusic1.muted = false;
+      bgMusic1.play();
+      bgMusic2.muted = false;
+      bgMusic2.play();
     });
 
     function sendChoice(amount) {
@@ -88,5 +94,6 @@
   </script>
 </body>
 </html>
+
 
 
